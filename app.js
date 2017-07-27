@@ -8,7 +8,7 @@ var prefix = `
 <head> 
 </head> 
   <body>
-    <form action='/' method ="post">
+    <form action='/submiturl' method ="post">
       <label>Submit your url</label>
       <input type="text" name='userUrl'>
       <input type="submit">
@@ -47,10 +47,10 @@ var userControl = function(req, res, next){
   return next();
 }
 
-app.get('/', urlControl);
+app.get('/submiturl', urlControl);
 
-app.post('/', userControl, urlControl);
+app.post('/submiturl', userControl, urlControl);
 
 app.listen(3003, function(){
-  console.log('listen on port 3000')
+  console.log('listen on port 3003')
 });
